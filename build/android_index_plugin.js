@@ -1,5 +1,5 @@
 const path = require('path');
-const html = require('choo/html');
+const html = require('nanohtml');
 const NAME = 'AndroidIndexPlugin';
 
 function chunkFileNames(compilation) {

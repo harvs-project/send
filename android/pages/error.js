@@ -1,4 +1,4 @@
-const html = require('choo/html');
+const html = require('nanohtml');
 
 export default function error(_state, _emit) {
   return html`

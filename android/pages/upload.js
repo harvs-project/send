@@ -1,4 +1,4 @@
-const html = require('choo/html');
+const html = require('nanohtml');
 
 export default function progressBar(state, emit) {
   let percent = 0;

@@ -137,7 +137,6 @@
     "@sentry/node": "^5.20.1",
     "aws-sdk": "^2.568.0",
     "body-parser": "^1.19.0",
-    "choo": "^7.0.0",
     "cldr-core": "^35.1.0",
     "configstore": "github:dannycoates/configstore#master",
     "convict": "^5.2.0",
@@ -145,7 +144,9 @@
     "helmet": "^3.23.3",
     "mkdirp": "^0.5.1",
     "mozlog": "^2.2.0",
+    "nanocomponent": "^6.6.0",
     "node-fetch": "^2.6.0",
+    "picochoo": "^8.0.0",
     "redis": "^3.0.2",
     "selenium-standalone": "^6.15.6",
     "ua-parser-js": "^0.7.21"

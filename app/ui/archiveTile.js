@@ -1,7 +1,7 @@
 /* global Android */
 
-const html = require('choo/html');
-const raw = require('choo/html/raw');
+const html = require('nanohtml');
+const raw = require('nanohtml/raw');
 const assets = require('../../common/assets');
 const {
   bytes,

@@ -1,5 +1,5 @@
 /* global downloadMetadata */
-const html = require('choo/html');
+const html = require('nanohtml');
 const assets = require('../../common/assets');
 const archiveTile = require('./archiveTile');
 const modal = require('./modal');

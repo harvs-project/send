@@ -1,6 +1,6 @@
 import 'intl-pluralrules';
-import choo from 'choo';
-import html from 'choo/html';
+import choo from 'picochoo';
+import html from 'nanohtml';
 import * as Sentry from '@sentry/browser';
 
 import { setApiUrlPrefix, getConstants } from '../app/api';

@@ -1,4 +1,4 @@
-const html = require('choo/html');
+const html = require('nanohtml');
 const { copyToClipboard } = require('../utils');
 
 module.exports = function(name, url) {

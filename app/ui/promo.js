@@ -1,5 +1,5 @@
-const html = require('choo/html');
-const Component = require('choo/component');
+const html = require('nanohtml');
+const Component = require('nanocomponent');
 const assets = require('../../common/assets');
 
 class Promo extends Component {

@@ -2,7 +2,7 @@
 import 'core-js';
 import 'fast-text-encoding'; // MS Edge support
 import 'intl-pluralrules';
-import choo from 'choo';
+import choo from 'picochoo';
 import nanotiming from 'nanotiming';
 import routes from './routes';
 import getCapabilities from './capabilities';

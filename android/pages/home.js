@@ -1,4 +1,4 @@
-const html = require('choo/html');
+const html = require('nanohtml');
 const { list } = require('../../app/utils');
 const archiveTile = require('../../app/ui/archiveTile');
 const modal = require('../../app/ui/modal');

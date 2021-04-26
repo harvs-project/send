@@ -1,4 +1,4 @@
-const choo = require('choo');
+const choo = require('picochoo');
 const download = require('./ui/download');
 const body = require('./ui/body');
 
