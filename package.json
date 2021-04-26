@@ -42,13 +42,11 @@
   "lint-staged": {
     "*.js": [
       "prettier --single-quote --write",
-      "eslint",
-      "git add"
+      "eslint"
     ],
     "*.css": [
       "prettier --single-quote --write",
-      "stylelint",
-      "git add"
+      "stylelint"
     ]
   },
   "nyc": {
