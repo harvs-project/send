@@ -1,13 +1,12 @@
 const fss = require('fs');
 const fs = fss.promises;
 const path = require('path');
-const mkdirp = require('mkdirp');
 
 class FSStorage {
   constructor(config, log) {
     this.log = log;
     this.dir = config.file_dir;
-    mkdirp.sync(this.dir);
+    fss.mkdirSync(this.dir, { recursive: true });
   }
 
   async length(id) {
@@ -24,10 +23,10 @@ class FSStorage {
       const filepath = path.join(this.dir, id);
       const fstream = fss.createWriteStream(filepath);
       file.pipe(fstream);
-      file.on('error', err => {
+      file.on('error', (err) => {
         fstream.destroy(err);
       });
-      fstream.on('error', err => {
+      fstream.on('error', (err) => {
         this.del(id);
         reject(err);
       });

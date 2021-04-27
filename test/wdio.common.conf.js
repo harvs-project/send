@@ -1,10 +1,9 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
-const rimraf = require('rimraf');
+const { rmdirSync, mkdirSync } = require('fs');
 const dir = path.join(__dirname, 'integration', 'downloads');
 
-mkdirp.sync(dir);
-rimraf.sync(`${dir}${path.sep}*`);
+mkdirSync(dir, { recursive: true });
+rmdirSync(`${dir}${path.sep}*`, { recursive: true, force: true });
 
 exports.config = {
   specs: [path.join(__dirname, './integration/**/*-tests.js')],
@@ -20,10 +19,10 @@ exports.config = {
           'browser.helperApps.neverAsk.openFile': 'text/plain',
           'browser.helperApps.neverAsk.saveToDisk': 'text/plain',
           'browser.download.folderList': 2,
-          'browser.download.dir': dir
-        }
-      }
-    }
+          'browser.download.dir': dir,
+        },
+      },
+    },
   ],
   pageLoadStrategy: 'normal',
   watch: false,
@@ -43,6 +42,6 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 30000,
-    retries: 1
-  }
+    retries: 1,
+  },
 };
