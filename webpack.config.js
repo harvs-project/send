@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const VersionPlugin = require('./build/version_plugin');
 const AndroidIndexPlugin = require('./build/android_index_plugin');
 const MiniCssExtracPlugin = require('mini-css-extract-plugin');
@@ -57,11 +57,7 @@ const serviceWorker = {
           {
             loader: 'svgo-loader',
             options: {
-              plugins: [
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true }, // for smallness
-              ],
+              configFile: false,
             },
           },
         ],
@@ -74,6 +70,11 @@ const serviceWorker = {
     ],
   },
   plugins: [new webpack.IgnorePlugin(/\.\.\/dist/)],
+  resolve: {
+    fallback: {
+      path: false,
+    },
+  },
 };
 
 const web = {
@@ -142,12 +143,7 @@ const web = {
           {
             loader: 'svgo-loader',
             options: {
-              plugins: [
-                { cleanupIDs: false },
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true }, // for smallness
-              ],
+              configFile: false,
             },
           },
         ],
@@ -193,11 +189,11 @@ const web = {
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.IgnorePlugin(/\.\.\/dist/), // used in common/*.js
     new MiniCssExtracPlugin({
-      filename: '[name].[md5:contenthash:8].css',
+      filename: '[name].[contenthash:8].css',
     }),
     new VersionPlugin(), // used for the /__version__ route
     new AndroidIndexPlugin(),
-    new ManifestPlugin(), // used by server side to resolve hashed assets
+    new WebpackManifestPlugin(), // used by server side to resolve hashed assets
   ],
   devtool: 'source-map',
   devServer: {
@@ -212,6 +208,11 @@ const web = {
         ws: true,
         secure: false,
       },
+    },
+  },
+  resolve: {
+    fallback: {
+      path: 'path-browserify',
     },
   },
 };
