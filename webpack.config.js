@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const VersionPlugin = require('./build/version_plugin');
 const AndroidIndexPlugin = require('./build/android_index_plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 
 const webJsOptions = {
   babelrc: false,
@@ -155,16 +155,15 @@ const web = {
       {
         // creates style.css with all styles
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1
-              }
+        use: [
+          MiniCssExtracPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
             }
-          ]
-        })
+          }
+        ]
       },
       {
         test: /\.ftl$/,
@@ -191,7 +190,7 @@ const web = {
     ]),
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.IgnorePlugin(/\.\.\/dist/), // used in common/*.js
-    new ExtractTextPlugin({
+    new MiniCssExtracPlugin({
       filename: '[name].[md5:contenthash:8].css'
     }),
     new VersionPlugin(), // used for the /__version__ route
