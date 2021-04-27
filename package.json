@@ -133,7 +133,6 @@
     "aws-sdk": "^2.892.0",
     "body-parser": "^1.19.0",
     "cldr-core": "^35.1.0",
-    "configstore": "github:harvs-project/configstore#main",
     "convict": "^5.2.0",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
