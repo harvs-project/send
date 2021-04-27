@@ -1,10 +1,10 @@
 {
   "name": "firefox-send",
-  "description": "File Sharing Experiment",
-  "version": "3.0.22",
-  "author": "Mozilla (https://mozilla.org)",
-  "repository": "mozilla/send",
-  "homepage": "https://github.com/mozilla/send/",
+  "description": "Fork from Mozilla Send - File Sharing Experiment",
+  "version": "4.0.0-fork",
+  "author": "harvs-project",
+  "repository": "harvs-project/send",
+  "homepage": "https://github.com/harvs-project/send/",
   "license": "MPL-2.0",
   "private": true,
   "scripts": {
@@ -54,9 +54,6 @@
       "text"
     ],
     "cache": true
-  },
-  "engines": {
-    "node": "^12.16.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
@@ -136,7 +133,7 @@
     "aws-sdk": "^2.892.0",
     "body-parser": "^1.19.0",
     "cldr-core": "^35.1.0",
-    "configstore": "github:dannycoates/configstore#master",
+    "configstore": "github:harvs-project/configstore#main",
     "convict": "^5.2.0",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
