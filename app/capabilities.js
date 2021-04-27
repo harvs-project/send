@@ -45,13 +45,7 @@ async function checkCrypto() {
     );
     return true;
   } catch (err) {
-    try {
-      window.asmCrypto = await import('asmcrypto.js');
-      // HACK: remove some sort of support, needs investigation
-      return true;
-    } catch (e) {
-      return false;
-    }
+    return false;
   }
 }
 

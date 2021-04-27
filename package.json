@@ -63,7 +63,6 @@
     "@mattiasbuelens/web-streams-polyfill": "0.2.1",
     "@sentry/browser": "^5.20.1",
     "@types/node": "^15.0.0",
-    "asmcrypto.js": "^0.22.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-istanbul": "^6.0.0",
     "base64-js": "^1.5.1",
