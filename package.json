@@ -89,7 +89,7 @@
     "husky": "^3.0.9",
     "intl-pluralrules": "^1.2.2",
     "lint-staged": "^10.5.4",
-    "mocha": "^6.2.2",
+    "mocha": "^8.3.2",
     "morgan": "^1.10.0",
     "nanobus": "^4.5.0",
     "nanohtml": "^1.9.1",
