@@ -111,7 +111,7 @@ class Storage {
   }
 
   set user(info) {
-    return this.engine.setItem('user', JSON.stringify(info));
+    this.engine.setItem('user', JSON.stringify(info));
   }
 
   getFileById(id) {
